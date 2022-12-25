@@ -19,7 +19,7 @@ export default class App extends Component {
     modalImg: null,
   };
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_, prevState) {
     if (prevState.name !== this.state.name) {
       this.setState({ status: 'pending' });
 
@@ -38,7 +38,8 @@ export default class App extends Component {
             query: [...prevState.query, ...query],
             status: 'resolved',
           }))
-        );
+      );
+    
     }
     if (prevState.query !== this.state.query) {
       window.scrollTo({
